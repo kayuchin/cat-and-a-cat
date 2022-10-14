@@ -1,2 +1,2 @@
-# cat-and-a-cat
+# cat-in-a-cat
 A relaxing matching card game
