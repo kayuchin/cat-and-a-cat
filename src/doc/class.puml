@@ -1,0 +1,53 @@
+@startuml "Class Diagram"
+GameItemProps <|-- BoardProps
+GameItemProps <|-- CardProps
+
+interface GameItemProps {
+    - IDimension dimension
+    - string imageUrl
+}
+
+interface BoardProps {
+    - int currentCardNum
+    - Card[] currentCards
+    + void sortCards
+    + void checkCardMatches
+    + bool checkFullCapacity()
+}
+
+interface CardProps {
+    - Pattern pattern
+    - int zIndex 
+    - bool disabled
+    + void onClick()
+}
+
+interface IDimension {
+    - int height
+    - int height
+}
+
+interface IPosition {
+    - int x
+    - int y
+}
+
+enum Pattern {
+    BELL
+    BRUSH
+    CABBAGE
+    CARROT
+    CORN
+    FIREWOOD
+    GLOVE
+    GRASS
+    HAY
+    MILK
+    PAIL
+    RAKE
+    SCISSORS
+    THREAD
+    TRUNK
+    WOOL
+}
+@enduml
