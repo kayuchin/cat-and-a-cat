@@ -1,6 +1,5 @@
 export interface GameItemProps {
-    dimension: IDimension;
-    imageUrl: string;
+    position: IPosition;
 }
 
 export interface IDimension {

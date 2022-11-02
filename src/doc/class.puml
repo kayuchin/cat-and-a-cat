@@ -2,16 +2,25 @@
 GameItemProps <|-- BoardProps
 GameItemProps <|-- CardProps
 
+CardArea o-- CardProps
+BoardProps o-- CardProps
+
+interface CardArea {
+    - Card[] CardDeck
+    + void shuffleCardDeck()
+    + bool checkVictory()
+}
+
 interface GameItemProps {
-    - IDimension dimension
+    - IPosition position
     - string imageUrl
 }
 
 interface BoardProps {
     - int currentCardNum
-    - Card[] currentCards
-    + void sortCards
-    + void checkCardMatches
+    - Card[] cardsOnBoard
+    + void sortCards()
+    + void checkCardMatches()
     + bool checkFullCapacity()
 }
 
